@@ -1,0 +1,33 @@
+name: Build and Export Static HTML
+
+on:
+  push:
+    branches: [ main, master ] # Triggers whenever you push code updates
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Static Export
+        run: npm run build
+        # This executes your output: 'export' config and generates the 'out' folder
+
+      - name: Archive Static Output
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-html-output
+          path: out/
+          # This saves your generated HTML/CSS/JS folder as a downloadable artifact in GitHub
