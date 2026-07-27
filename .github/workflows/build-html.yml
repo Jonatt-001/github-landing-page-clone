@@ -2,7 +2,7 @@ name: Build and Export Static HTML
 
 on:
   push:
-    branches: [ main, master ] # Triggers whenever you push code updates
+    branches: [ main, master ]
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install Dependencies
@@ -23,11 +23,9 @@ jobs:
 
       - name: Build Static Export
         run: npm run build
-        # This executes your build script and generates your static site output
 
       - name: Archive Static Output
         uses: actions/upload-artifact@v4
         with:
           name: static-html-output
           path: dist/
-          # This saves your generated static folder as a downloadable artifact in GitHub
