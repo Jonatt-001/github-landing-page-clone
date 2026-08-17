@@ -6,11 +6,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'github.githubassets.com',
+        hostname: 'gee-mobile.gee-mobileassets.com',
       },
       {
         protocol: 'https',
-        hostname: '**.githubassets.com',
+        hostname: '**.gee-mobileassets.com',
       },
     ],
   },
