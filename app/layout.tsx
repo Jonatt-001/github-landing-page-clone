@@ -4,23 +4,23 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
 
 export const metadata = {
-  metadataBase: new URL('https://geemobile.geefox.xyz'),
+  metadataBase: new URL('https://mobile.geefox.xyz'),
   title: {
-    default: 'Gee Mobile - Build, Manage and Deploy Software from Your Phone',
+    default: 'Gee Mobile - Mobile Developer Workspace by GeeFox',
     template: '%s | Gee Mobile by GeeFox',
   },
   description:
-    'Gee Mobile is a mobile-first developer workspace by GeeFox for building, inspecting, editing, deploying and maintaining software from your phone.',
+    'Gee Mobile is a mobile-first developer workspace by GeeFox for building, inspecting, editing, deploying and managing software projects from your phone.',
   keywords: [
     'Gee Mobile',
     'GeeFox',
+    'mobile developer workspace',
     'mobile development',
     'mobile coding',
-    'developer workspace',
     'code from phone',
     'build software from phone',
-    'deploy from phone',
-    'manage projects from phone',
+    'deploy software from phone',
+    'manage GitHub projects on mobile',
     'mobile developer tools',
   ],
   applicationName: 'Gee Mobile',
@@ -33,8 +33,9 @@ export const metadata = {
   authors: [{ name: 'GeeFox', url: 'https://geefox.xyz' }],
   creator: 'GeeFox',
   publisher: 'GeeFox',
+  category: 'technology',
   alternates: {
-    canonical: 'https://geemobile.geefox.xyz/',
+    canonical: 'https://mobile.geefox.xyz/',
   },
   robots: {
     index: true,
@@ -49,18 +50,18 @@ export const metadata = {
   },
   openGraph: {
     type: 'website',
-    url: 'https://geemobile.geefox.xyz/',
+    url: 'https://mobile.geefox.xyz/',
     siteName: 'Gee Mobile',
-    title: 'Gee Mobile - Build, Manage and Deploy Software from Your Phone',
+    title: 'Gee Mobile - Mobile Developer Workspace by GeeFox',
     description:
-      'A mobile-first developer workspace by GeeFox for building, inspecting, editing, deploying and maintaining software from your phone.',
+      'Build, inspect, edit, deploy and manage software projects from your phone with Gee Mobile, the mobile-first developer workspace by GeeFox.',
     locale: 'en_NG',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gee Mobile - Build, Manage and Deploy Software from Your Phone',
+    title: 'Gee Mobile - Mobile Developer Workspace by GeeFox',
     description:
-      'Build, inspect, edit, deploy and maintain software from your phone with Gee Mobile by GeeFox.',
+      'Build, inspect, edit, deploy and manage software projects from your phone with Gee Mobile by GeeFox.',
   },
 }
 
@@ -69,27 +70,49 @@ const structuredData = {
   '@graph': [
     {
       '@type': 'SoftwareApplication',
+      '@id': 'https://mobile.geefox.xyz/#software',
       name: 'Gee Mobile',
+      alternateName: 'Gee Mobile by GeeFox',
       applicationCategory: 'DeveloperApplication',
+      applicationSubCategory: 'Mobile Developer Workspace',
       operatingSystem: 'Web',
-      url: 'https://geemobile.geefox.xyz/',
+      url: 'https://mobile.geefox.xyz/',
       description:
-        'A mobile-first developer workspace for building, inspecting, editing, deploying and maintaining software from a phone.',
+        'Gee Mobile is a mobile-first developer workspace by GeeFox for building, inspecting, editing, deploying and managing software projects from a phone.',
       creator: {
         '@type': 'Organization',
+        '@id': 'https://geefox.xyz/#organization',
+        name: 'GeeFox',
+        url: 'https://geefox.xyz/',
+      },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://geefox.xyz/#organization',
         name: 'GeeFox',
         url: 'https://geefox.xyz/',
       },
     },
     {
       '@type': 'WebSite',
+      '@id': 'https://mobile.geefox.xyz/#website',
       name: 'Gee Mobile',
-      url: 'https://geemobile.geefox.xyz/',
+      alternateName: 'Gee Mobile by GeeFox',
+      url: 'https://mobile.geefox.xyz/',
+      description:
+        'The official Gee Mobile website and mobile-first developer workspace by GeeFox.',
       publisher: {
         '@type': 'Organization',
+        '@id': 'https://geefox.xyz/#organization',
         name: 'GeeFox',
         url: 'https://geefox.xyz/',
       },
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://geefox.xyz/#organization',
+      name: 'GeeFox',
+      url: 'https://geefox.xyz/',
     },
   ],
 }
